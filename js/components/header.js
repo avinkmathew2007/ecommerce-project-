@@ -59,9 +59,19 @@ export function initHeader() {
     });
   }
 
-  if (mobCartBtn) {
-    mobCartBtn.addEventListener('click', () => {
-      store.openCart();
+  const profileBtn = document.getElementById('header-profile-btn');
+  const mobProfileBtn = document.getElementById('mob-nav-profile');
+
+  // Profile Button
+  if (profileBtn) {
+    profileBtn.addEventListener('click', () => {
+      store.openProfile('orders');
+    });
+  }
+
+  if (mobProfileBtn) {
+    mobProfileBtn.addEventListener('click', () => {
+      store.openProfile('orders');
     });
   }
 

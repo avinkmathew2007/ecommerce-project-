@@ -10,6 +10,7 @@ import { initProductModal } from './components/productModal.js';
 import { initCartDrawer } from './components/cartDrawer.js';
 import { initCheckoutModal } from './components/checkoutModal.js';
 import { initWishlistDrawer } from './components/wishlistDrawer.js';
+import { initProfileModal } from './components/profileModal.js';
 import { showToast } from './components/toast.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCartDrawer();
   initCheckoutModal();
   initWishlistDrawer();
+  initProfileModal();
 
   // Grid container & results counter
   const productsGrid = document.getElementById('products-grid');

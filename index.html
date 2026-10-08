@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="./css/components.css" />
   <link rel="stylesheet" href="./css/cart.css" />
   <link rel="stylesheet" href="./css/modal.css" />
+  <link rel="stylesheet" href="./css/profile.css" />
   <link rel="stylesheet" href="./css/responsive.css" />
 </head>
 <body>
@@ -79,6 +80,11 @@
 
       <!-- Header Action Controls -->
       <div class="header-actions">
+        <!-- Client Profile Button -->
+        <button type="button" class="action-btn" id="header-profile-btn" title="Client Account & Orders" aria-label="Account">
+          <span aria-hidden="true">👤</span>
+        </button>
+
         <!-- Wishlist Button -->
         <button type="button" class="action-btn" id="header-wishlist-btn" title="View Wishlist" aria-label="Wishlist">
           <span aria-hidden="true">♡</span>
@@ -317,6 +323,13 @@
     </div>
   </div>
 
+  <!-- Client Profile & Account Modal -->
+  <div class="modal-backdrop" id="profile-modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal-container">
+      <!-- Dynamically filled by profileModal.js -->
+    </div>
+  </div>
+
   <!-- Mobile Bottom Navigation Bar -->
   <nav class="mobile-nav-bar" aria-label="Mobile Navigation">
     <div class="mobile-nav-items">
@@ -332,6 +345,10 @@
         <span class="mob-nav-icon" aria-hidden="true">🛍️</span>
         <span>Bag</span>
         <span class="badge-count" id="mob-cart-badge" style="display: none; top: 0px; right: 10px;">0</span>
+      </button>
+      <button type="button" class="mob-nav-btn" id="mob-nav-profile">
+        <span class="mob-nav-icon" aria-hidden="true">👤</span>
+        <span>Account</span>
       </button>
     </div>
   </nav>

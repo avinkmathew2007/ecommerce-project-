@@ -9,6 +9,69 @@ const FREE_SHIPPING_THRESHOLD = 2999;
 const STANDARD_SHIPPING_FEE = 149;
 const TAX_RATE = 0.05; // 5% GST mock tax
 
+const DEFAULT_USER = {
+  name: "Elena Vance",
+  email: "elena.vance@example.com",
+  phone: "+91 98765 43210",
+  avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
+  tier: "Atelier Gold VIP",
+  memberSince: "Nov 2024",
+  defaultSize: "M",
+  preferredCategory: "Outerwear & Tailoring",
+  addresses: [
+    {
+      id: "addr-1",
+      title: "Primary Residence",
+      street: "742 Evergreen Heights, Bandra West",
+      city: "Mumbai",
+      state: "Maharashtra",
+      zip: "400050",
+      isDefault: true
+    },
+    {
+      id: "addr-2",
+      title: "Design Studio",
+      street: "Plot 18, Indiranagar 100ft Road",
+      city: "Bengaluru",
+      state: "Karnataka",
+      zip: "560038",
+      isDefault: false
+    }
+  ],
+  orders: [
+    {
+      orderId: "VEL-892341",
+      date: "Oct 04, 2026",
+      status: "Delivered",
+      statusColor: "success",
+      trackingNumber: "DTDC-99281923IN",
+      items: [
+        {
+          name: "Architectural Wool Trench Coat",
+          selectedColor: "Camel Tan",
+          selectedColorHex: "#c39e76",
+          selectedSize: "M",
+          price: 11999,
+          quantity: 1,
+          image: "https://images.unsplash.com/photo-1544022613-e87ca75a784a?auto=format&fit=crop&w=400&q=80"
+        }
+      ],
+      totals: {
+        subtotal: 11999,
+        discount: 0,
+        shipping: 0,
+        tax: 600,
+        total: 12599
+      },
+      customer: {
+        name: "Elena Vance",
+        email: "elena.vance@example.com",
+        address: "742 Evergreen Heights, Bandra West, Mumbai 400050"
+      }
+    }
+  ]
+};
+
 class Store {
   constructor() {
     this.subscribers = new Set();
@@ -22,6 +85,7 @@ class Store {
     });
     this.wishlist = loadFromStorage('wishlist', []);
     this.appliedPromo = loadFromStorage('promo', null);
+    this.user = loadFromStorage('user', DEFAULT_USER);
 
     // Filter & Search State
     this.filters = {
@@ -40,6 +104,8 @@ class Store {
       isCartOpen: false,
       isWishlistOpen: false,
       isCheckoutOpen: false,
+      isProfileOpen: false,
+      profileActiveTab: 'orders', // 'orders', 'details', 'addresses', 'vip'
       isMobileMenuOpen: false,
       quickViewProductId: null,
       sizeGuideGender: null,
@@ -388,8 +454,69 @@ class Store {
     this.notify('ui_changed', this.ui);
   }
 
+  // --- User Profile Operations ---
+
+  updateUserProfile(updatedFields) {
+    this.user = {
+      ...this.user,
+      ...updatedFields
+    };
+    saveToStorage('user', this.user);
+    this.notify('user_updated', { user: this.user });
+    this.notify('toast', { type: 'success', message: 'Profile details updated successfully.' });
+  }
+
+  addAddress(addressData) {
+    const newAddress = {
+      id: generateId('addr'),
+      isDefault: this.user.addresses.length === 0,
+      ...addressData
+    };
+    this.user.addresses.push(newAddress);
+    saveToStorage('user', this.user);
+    this.notify('user_updated', { user: this.user });
+    this.notify('toast', { type: 'success', message: 'New address added to your address book.' });
+  }
+
+  deleteAddress(addressId) {
+    this.user.addresses = this.user.addresses.filter(a => a.id !== addressId);
+    saveToStorage('user', this.user);
+    this.notify('user_updated', { user: this.user });
+    this.notify('toast', { type: 'info', message: 'Address removed from your address book.' });
+  }
+
+  openProfile(tab = 'orders') {
+    this.ui.isProfileOpen = true;
+    this.ui.profileActiveTab = tab;
+    this.ui.isCartOpen = false;
+    this.ui.isWishlistOpen = false;
+    this.notify('ui_changed', this.ui);
+  }
+
+  closeProfile() {
+    this.ui.isProfileOpen = false;
+    this.notify('ui_changed', this.ui);
+  }
+
+  setProfileTab(tab) {
+    this.ui.profileActiveTab = tab;
+    this.notify('ui_changed', this.ui);
+  }
+
   setOrderSuccess(orderData) {
     this.ui.orderSuccessData = orderData;
+    
+    // Automatically record order into user profile order history
+    const recordedOrder = {
+      ...orderData,
+      status: 'Confirmed',
+      statusColor: 'info',
+      trackingNumber: `DTDC-${Math.floor(10000000 + Math.random() * 90000000)}IN`
+    };
+    this.user.orders.unshift(recordedOrder);
+    saveToStorage('user', this.user);
+    this.notify('user_updated', { user: this.user });
+
     this.clearCart();
     this.notify('ui_changed', this.ui);
   }
