@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VÉLANE ATELIER | Contemporary Luxury Apparel & Architectural Clothing</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Discover VÉLANE ATELIER's curated contemporary fashion collections. Shop premium tailored wool coats, heavyweight hoodies, organic linen shirts, and minimalist luxury accessories." />
+  <meta name="keywords" content="clothing, fashion, apparel, luxury streetwear, tailored trousers, wool trench coat, silk dress, sustainable fashion" />
+  <meta name="author" content="VÉLANE ATELIER" />
+  <meta property="og:title" content="VÉLANE ATELIER | Contemporary Luxury Apparel" />
+  <meta property="og:description" content="Architectural silhouettes and traceable luxury fabrics engineered for effortless everyday elegance." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1544022613-e87ca75a784a?auto=format&fit=crop&w=1200&q=80" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./css/tokens.css" />
+  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="stylesheet" href="./css/components.css" />
+  <link rel="stylesheet" href="./css/cart.css" />
+  <link rel="stylesheet" href="./css/modal.css" />
+  <link rel="stylesheet" href="./css/responsive.css" />
+</head>
+<body>
+
+  <!-- Top Announcement Marquee -->
+  <aside class="announcement-bar" aria-label="Store Announcements">
+    <div class="marquee-content">
+      <span class="marquee-item">COMPLIMENTARY EXPRESS DELIVERY ACROSS INDIA ON ORDERS OVER ₹2,999</span>
+      <span class="marquee-item">USE CODE <strong>WELCOME15</strong> FOR 15% OFF YOUR FIRST ORDER</span>
+      <span class="marquee-item">AUTUMN / WINTER CAPSULE COLLECTION NOW LIVE</span>
+      <span class="marquee-item">30-DAY EFFORTLESS RETURNS & DOORSTEP PICKUP</span>
+      <!-- Duplicate for seamless looping -->
+      <span class="marquee-item">COMPLIMENTARY EXPRESS DELIVERY ACROSS INDIA ON ORDERS OVER ₹2,999</span>
+      <span class="marquee-item">USE CODE <strong>WELCOME15</strong> FOR 15% OFF YOUR FIRST ORDER</span>
+      <span class="marquee-item">AUTUMN / WINTER CAPSULE COLLECTION NOW LIVE</span>
+      <span class="marquee-item">30-DAY EFFORTLESS RETURNS & DOORSTEP PICKUP</span>
+    </div>
+  </aside>
+
+  <!-- Sticky Site Header -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo" aria-label="VÉLANE ATELIER Home">
+        <span class="brand-title">VÉLANE</span>
+        <span class="brand-subtitle">ATELIER • EST. 2024</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="#catalog-section" class="nav-link active">All Collections</a></li>
+          <li><a href="#catalog-section" class="nav-link" data-cat-nav="outerwear">Outerwear</a></li>
+          <li><a href="#catalog-section" class="nav-link" data-cat-nav="knitwear">Knitwear</a></li>
+          <li><a href="#catalog-section" class="nav-link" data-cat-nav="streetwear">Streetwear</a></li>
+          <li><a href="#catalog-section" class="nav-link" data-cat-nav="tailoring">Tailoring</a></li>
+        </ul>
+      </nav>
+
+      <!-- Real-time Search Bar -->
+      <div class="header-search">
+        <span class="search-icon-btn" aria-hidden="true">🔍</span>
+        <input 
+          type="search" 
+          id="header-search-input" 
+          class="search-input" 
+          placeholder="Search trench coats, hoodies, silk dresses..." 
+          aria-label="Search garments"
+        />
+      </div>
+
+      <!-- Header Action Controls -->
+      <div class="header-actions">
+        <!-- Wishlist Button -->
+        <button type="button" class="action-btn" id="header-wishlist-btn" title="View Wishlist" aria-label="Wishlist">
+          <span aria-hidden="true">♡</span>
+          <span class="badge-count" id="wishlist-badge-count" style="display: none;">0</span>
+        </button>
+
+        <!-- Shopping Bag Button -->
+        <button type="button" class="action-btn" id="header-cart-btn" title="View Shopping Bag" aria-label="Shopping Bag">
+          <span aria-hidden="true">🛍️</span>
+          <span class="badge-count" id="cart-badge-count" style="display: none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Editorial Hero Section -->
+    <section class="hero-section" aria-label="Featured Collection Hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-badge-tag">
+              <span>✦</span>
+              <span>Autumn / Winter 2026 Capsule</span>
+            </div>
+            <h1 class="hero-heading">
+              Sculpted Drapery & <em>Architectural</em> Tailoring.
+            </h1>
+            <p class="hero-description">
+              Uncompromising craftsmanship meets tactile luxury. Spun from double-faced Australian Merino wool and heavy French terry, engineered for modern silhouettes.
+            </p>
+            <div class="hero-actions">
+              <button type="button" class="btn-primary" id="hero-shop-cta">
+                <span>Shop The Collection</span>
+                <span aria-hidden="true">↓</span>
+              </button>
+              <a href="#catalog-section" class="btn-secondary">
+                <span>Explore Lookbook</span>
+              </a>
+            </div>
+
+            <div class="hero-metrics">
+              <div>
+                <div class="metric-val">100%</div>
+                <div class="metric-lbl">Traceable Fibers</div>
+              </div>
+              <div>
+                <div class="metric-val">480+</div>
+                <div class="metric-lbl">GSM Weight</div>
+              </div>
+              <div>
+                <div class="metric-val">30-Day</div>
+                <div class="metric-lbl">Complimentary Returns</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Visual Lookbook Card -->
+          <div class="hero-visual-card">
+            <img 
+              src="https://images.unsplash.com/photo-1544022613-e87ca75a784a?auto=format&fit=crop&w=1200&q=80" 
+              alt="Model wearing Camel Tan Wool Trench Coat" 
+              class="hero-visual-img" 
+            />
+            <div class="hero-floating-glass">
+              <div>
+                <div class="hero-glass-title">Architectural Wool Trench Coat</div>
+                <div class="hero-glass-sub">Australian Merino Wool • ₹11,999</div>
+              </div>
+              <button type="button" class="btn-primary" style="padding: 0.6rem 1.25rem; font-size: 0.8125rem;" onclick="document.getElementById('catalog-section').scrollIntoView({behavior:'smooth'})">
+                Discover
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Category Filter Bar -->
+    <section class="category-bar-section" aria-label="Category Selection">
+      <div class="container">
+        <div class="category-chips-list" id="category-chips-list">
+          <!-- Dynamically populated by filters.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Catalog & Filtering Layout -->
+    <section class="catalog-section" id="catalog-section" aria-label="Product Catalog">
+      <div class="container">
+        <div class="catalog-layout">
+          
+          <!-- Sidebar Filter Panel -->
+          <aside class="filter-panel" aria-label="Filters">
+            <div class="filter-header">
+              <span class="filter-title">Filters</span>
+              <button type="button" class="filter-reset-btn" id="filter-reset-btn">Reset All</button>
+            </div>
+
+            <!-- Gender / Fit Selection -->
+            <div class="filter-group">
+              <label class="filter-group-label">Silhouette & Fit</label>
+              <div class="gender-tabs">
+                <button type="button" class="gender-tab-btn active" data-gender="all">All</button>
+                <button type="button" class="gender-tab-btn" data-gender="women">Women</button>
+                <button type="button" class="gender-tab-btn" data-gender="men">Men</button>
+              </div>
+            </div>
+
+            <!-- Size Pills -->
+            <div class="filter-group">
+              <label class="filter-group-label">Size</label>
+              <div class="size-pills-grid" id="size-pills-container">
+                <!-- Dynamically populated by filters.js -->
+              </div>
+            </div>
+
+            <!-- Price Slider -->
+            <div class="filter-group">
+              <label class="filter-group-label">Maximum Price</label>
+              <div class="price-slider-wrap">
+                <input 
+                  type="range" 
+                  id="filter-price-slider" 
+                  class="price-slider" 
+                  min="1500" 
+                  max="15000" 
+                  step="500" 
+                  value="15000" 
+                />
+                <div class="price-slider-values">
+                  <span>₹1,500</span>
+                  <span class="price-val-curr" id="price-slider-display">₹15,000</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- In-Stock Only Switch -->
+            <div class="filter-group">
+              <label class="toggle-switch-label" for="filter-in-stock">
+                <span>In-Stock Only</span>
+                <input type="checkbox" id="filter-in-stock" class="toggle-switch-input" />
+              </label>
+            </div>
+          </aside>
+
+          <!-- Catalog Main Column -->
+          <div>
+            <!-- Toolbar -->
+            <div class="catalog-toolbar">
+              <div class="results-count" id="results-count-text">
+                Showing <strong>8</strong> garments
+              </div>
+
+              <div class="toolbar-controls">
+                <div class="sort-select-wrap">
+                  <label for="catalog-sort-select">Sort by:</label>
+                  <select id="catalog-sort-select" class="sort-select">
+                    <option value="featured">Featured Curations</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Customer Rating</option>
+                    <option value="newest">Newest Arrivals</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="products-grid">
+              <!-- Dynamically populated by app.js & productCard.js -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Slide-out Shopping Bag Drawer -->
+  <div class="drawer-backdrop" id="cart-drawer-backdrop"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping Bag">
+    <div class="drawer-header">
+      <div class="drawer-title-wrap">
+        <h2 class="drawer-title">Shopping Bag</h2>
+        <span class="drawer-count" id="cart-drawer-count">(0 items)</span>
+      </div>
+      <button type="button" class="drawer-close-btn" id="cart-drawer-close" aria-label="Close Bag">✕</button>
+    </div>
+
+    <!-- Free Shipping Progress Tracker -->
+    <div class="free-shipping-meter" id="free-shipping-meter"></div>
+
+    <!-- Items List Body -->
+    <div class="cart-items-body" id="cart-items-body"></div>
+
+    <!-- Pricing Summary & Checkout Button -->
+    <div class="drawer-footer" id="cart-drawer-footer"></div>
+  </aside>
+
+  <!-- Slide-out Wishlist Drawer -->
+  <div class="drawer-backdrop" id="wishlist-drawer-backdrop"></div>
+  <aside class="wishlist-drawer" id="wishlist-drawer" aria-label="Wishlist">
+    <div class="drawer-header">
+      <h2 class="drawer-title">Saved Wishlist</h2>
+      <button type="button" class="drawer-close-btn" id="wishlist-drawer-close" aria-label="Close Wishlist">✕</button>
+    </div>
+    <div class="cart-items-body" id="wishlist-items-body"></div>
+  </aside>
+
+  <!-- Quick View / PDP Modal -->
+  <div class="modal-backdrop" id="quickview-modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal-container">
+      <!-- Dynamically filled by productModal.js -->
+    </div>
+  </div>
+
+  <!-- Size Guide Modal -->
+  <div class="modal-backdrop" id="sizeguide-modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal-container">
+      <!-- Dynamically filled by productModal.js -->
+    </div>
+  </div>
+
+  <!-- Simulated Checkout Modal -->
+  <div class="modal-backdrop" id="checkout-modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal-container">
+      <!-- Dynamically filled by checkoutModal.js -->
+    </div>
+  </div>
+
+  <!-- Order Receipt Success Modal -->
+  <div class="modal-backdrop" id="receipt-modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal-container">
+      <!-- Dynamically filled by checkoutModal.js -->
+    </div>
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <nav class="mobile-nav-bar" aria-label="Mobile Navigation">
+    <div class="mobile-nav-items">
+      <button type="button" class="mob-nav-btn active" id="mob-nav-catalog">
+        <span class="mob-nav-icon" aria-hidden="true">✦</span>
+        <span>Catalog</span>
+      </button>
+      <button type="button" class="mob-nav-btn" id="mob-nav-wishlist">
+        <span class="mob-nav-icon" aria-hidden="true">♡</span>
+        <span>Wishlist</span>
+      </button>
+      <button type="button" class="mob-nav-btn" id="mob-nav-cart">
+        <span class="mob-nav-icon" aria-hidden="true">🛍️</span>
+        <span>Bag</span>
+        <span class="badge-count" id="mob-cart-badge" style="display: none; top: 0px; right: 10px;">0</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Site Footer -->
+  <footer style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle); padding: 4.5rem 0 2.5rem; margin-top: 5rem;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 3rem; margin-bottom: 3.5rem;">
+        <div>
+          <span class="brand-title" style="font-size: 1.4rem;">VÉLANE</span>
+          <p style="color: var(--text-secondary); font-size: 0.875rem; margin-top: 1rem; line-height: 1.7;">
+            Contemporary luxury apparel rooted in structural drapery, tactile woolens, and timeless minimalism. Designed in Paris, crafted globally.
+          </p>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.08em; color: #fff; margin-bottom: 1.25rem;">Client Care</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.875rem; color: var(--text-secondary);">
+            <li><a href="#" style="hover: color: #fff;">Order Tracking</a></li>
+            <li><a href="#" style="hover: color: #fff;">Complimentary Exchanges</a></li>
+            <li><a href="#" style="hover: color: #fff;">Sustainability Standards</a></li>
+            <li><a href="#" style="hover: color: #fff;">Fabric Care Directory</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.08em; color: #fff; margin-bottom: 1.25rem;">Atelier Codes</h4>
+          <p style="color: var(--text-secondary); font-size: 0.875rem; margin-bottom: 0.85rem;">
+            Enjoy 15% off your first curation with code:
+          </p>
+          <div style="display: inline-block; background: var(--bg-surface-elevated); border: 1px dashed var(--accent-gold); color: var(--accent-gold); padding: 0.45rem 1rem; border-radius: var(--radius-sm); font-weight: 700; font-family: monospace;">
+            WELCOME15
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 2rem; color: var(--text-muted); font-size: 0.8125rem; flex-wrap: wrap; gap: 1rem;">
+        <div>© 2026 VÉLANE ATELIER INC. ALL RIGHTS RESERVED.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <span>Privacy Policy</span>
+          <span>Terms of Service</span>
+          <span>Security & SSL</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Entry Script (ES Modules) -->
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

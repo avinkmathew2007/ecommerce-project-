@@ -1,0 +1,19 @@
+{
+  "name": "velane-atelier-ecommerce",
+  "version": "1.0.0",
+  "description": "High-performance contemporary clothing e-commerce web application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "ecommerce",
+    "fashion",
+    "clothing",
+    "apparel",
+    "luxury"
+  ],
+  "author": "Antigravity",
+  "license": "ISC"
+}
